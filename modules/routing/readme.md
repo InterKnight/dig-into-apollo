@@ -221,7 +221,7 @@ bool GraphCreator::Create() {
   graph_.set_hdmap_version(pbmap_.header().version());
   graph_.set_hdmap_district(pbmap_.header().district());
 
-  // 从base_map中读取道路和lane对应关系，base_map的消息结构在map.proto和map_road.proto中
+  // 从base_map中读取道路和lane对应关系，也就是知道每天lane对应的是哪个road，base_map的消息结构在map.proto和map_road.proto中
   for (const auto& road : pbmap_.road()) {
     for (const auto& section : road.section()) {
       for (const auto& lane_id : section.lane_id()) {
